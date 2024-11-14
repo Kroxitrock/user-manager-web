@@ -8,6 +8,6 @@ export interface Page<T> {
 }
 
 export interface PageRequest {
-  size?: number;
-  page?: number;
+  size: number;
+  page: number;
 }
