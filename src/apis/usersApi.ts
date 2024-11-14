@@ -1,4 +1,4 @@
-import { Page, PageRequest } from "@/dtos/pagination";
+import { Page, UserFilterRequest } from "@/dtos/pagination";
 import { SaveUserDto, UserDetails } from "@/dtos/userDtos";
 import axios from "axios";
 
@@ -10,10 +10,10 @@ export function createUser(userDto: SaveUserDto) {
 }
 
 export function fetchUsers(
-  pageRequest?: PageRequest
+  filter?: UserFilterRequest
 ): Promise<Page<UserDetails>> {
   return axios
-    .get(apiDomain + usersPath, { params: pageRequest })
+    .get(apiDomain + usersPath, { params: filter })
     .then((response) => response.data as Page<UserDetails>);
 }
 

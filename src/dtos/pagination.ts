@@ -11,3 +11,7 @@ export interface PageRequest {
   size: number;
   page: number;
 }
+
+export interface UserFilterRequest extends PageRequest {
+  name?: string;
+}

@@ -53,7 +53,7 @@ const columns: ColumnDef<UserDetails>[] = [
 ];
 
 export default function UsersTable() {
-  const { data, isPending, pageRequest, setPageRequest, refetch } = useUsers();
+  const { data, isPending, filter, setFilter, refetch } = useUsers();
 
   const table = useReactTable({
     data: isPending ? [] : data!.content,
@@ -154,9 +154,9 @@ export default function UsersTable() {
   }
 
   function updatePage(value: number) {
-    setPageRequest({
-      ...pageRequest,
-      page: pageRequest.page + value,
+    setFilter({
+      ...filter,
+      page: filter.page + value,
     });
     setTimeout(refetch);
   }
