@@ -22,7 +22,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "./ui/pagination";
-import { Button } from "./ui/button";
+import DeleteUserDialog from "./DeleteUserDialog";
 
 const columns: ColumnDef<UserDetails>[] = [
   {
@@ -39,7 +39,12 @@ const columns: ColumnDef<UserDetails>[] = [
   },
   {
     id: "actions",
-    cell: () => <Button> Delete </Button>,
+    cell: ({ row }) => (
+      <DeleteUserDialog
+        userId={row.original.id}
+        userName={row.original.name}
+      ></DeleteUserDialog>
+    ),
   },
 ];
 

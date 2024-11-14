@@ -12,3 +12,7 @@ export function fetchUsers(
     .get(apiDomain + usersPath, { params: pageRequest })
     .then((response) => response.data as Page<UserDetails>);
 }
+
+export function deleteUser(userId: number) {
+  return axios.delete(`${apiDomain}${usersPath}/${userId}`);
+}
