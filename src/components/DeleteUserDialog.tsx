@@ -57,10 +57,11 @@ export default function DeleteUserDialog({ userId, userName }: Props) {
   function showSuccessToast() {
     toast({
       duration: 2000,
-      description: "User deleted successfully",
+      description: "User deleted successfully.",
       style: { color: "green" },
     });
   }
+
   function showErrorToast() {
     toast({
       duration: 2000,

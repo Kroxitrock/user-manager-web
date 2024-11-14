@@ -1,8 +1,8 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "./App.css";
 import { UsersProvider } from "./providers/UsersProvider";
-import UsersTable from "./components/UsersTable";
 import { Toaster } from "./components/ui/toaster";
+import Home from "./components/Home";
 
 const queryClient = new QueryClient();
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <>
       <QueryClientProvider client={queryClient}>
         <UsersProvider>
-          <UsersTable></UsersTable>
+          <Home></Home>
         </UsersProvider>
       </QueryClientProvider>
       <Toaster />

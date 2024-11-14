@@ -4,3 +4,8 @@ export interface UserDetails {
   email: string;
   phoneNumber: string;
 }
+export interface SaveUserDto {
+  name: string;
+  email: string;
+  phoneNumber: string;
+}

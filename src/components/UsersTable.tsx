@@ -23,6 +23,7 @@ import {
   PaginationPrevious,
 } from "./ui/pagination";
 import DeleteUserDialog from "./DeleteUserDialog";
+import { UserDetailsDialog } from "./UserDetailsDialog";
 
 const columns: ColumnDef<UserDetails>[] = [
   {
@@ -40,10 +41,13 @@ const columns: ColumnDef<UserDetails>[] = [
   {
     id: "actions",
     cell: ({ row }) => (
-      <DeleteUserDialog
-        userId={row.original.id}
-        userName={row.original.name}
-      ></DeleteUserDialog>
+      <div className="flex justify-between">
+        <UserDetailsDialog user={row.original}></UserDetailsDialog>
+        <DeleteUserDialog
+          userId={row.original.id}
+          userName={row.original.name}
+        ></DeleteUserDialog>
+      </div>
     ),
   },
 ];
